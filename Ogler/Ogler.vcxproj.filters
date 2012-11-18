@@ -1,0 +1,234 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <ItemGroup>
+    <ClCompile Include="BasicEngine.cpp" />
+    <ClCompile Include="BasicObjects.cpp" />
+    <ClCompile Include="Colour.cpp" />
+    <ClCompile Include="CubeMap.cpp" />
+    <ClCompile Include="FBOManager.cpp" />
+    <ClCompile Include="FrameBufferObject.cpp" />
+    <ClCompile Include="GLGUI\shaders.cpp" />
+    <ClCompile Include="MiscUtils.cpp" />
+    <ClCompile Include="QuadDrawer.cpp" />
+    <ClCompile Include="Shader.cpp" />
+    <ClCompile Include="ShaderManager.cpp" />
+    <ClCompile Include="BasicTexture.cpp" />
+    <ClCompile Include="StaticMesh.cpp" />
+    <ClCompile Include="Uniform.cpp" />
+    <ClCompile Include="SubMesh.cpp" />
+    <ClCompile Include="svl\Basics.cpp">
+      <Filter>SVL</Filter>
+    </ClCompile>
+    <ClCompile Include="svl\Mat.cpp">
+      <Filter>SVL</Filter>
+    </ClCompile>
+    <ClCompile Include="svl\Mat2.cpp">
+      <Filter>SVL</Filter>
+    </ClCompile>
+    <ClCompile Include="svl\Mat3.cpp">
+      <Filter>SVL</Filter>
+    </ClCompile>
+    <ClCompile Include="svl\Mat4.cpp">
+      <Filter>SVL</Filter>
+    </ClCompile>
+    <ClCompile Include="svl\Vec.cpp">
+      <Filter>SVL</Filter>
+    </ClCompile>
+    <ClCompile Include="svl\Vec2.cpp">
+      <Filter>SVL</Filter>
+    </ClCompile>
+    <ClCompile Include="svl\Vec3.cpp">
+      <Filter>SVL</Filter>
+    </ClCompile>
+    <ClCompile Include="svl\Vec4.cpp">
+      <Filter>SVL</Filter>
+    </ClCompile>
+    <ClCompile Include="ObjLoader\obj_parser.cpp">
+      <Filter>Obj</Filter>
+    </ClCompile>
+    <ClCompile Include="ObjLoader\objLoader.cpp">
+      <Filter>Obj</Filter>
+    </ClCompile>
+    <ClCompile Include="ObjLoader\string_extra.cpp">
+      <Filter>Obj</Filter>
+    </ClCompile>
+    <ClCompile Include="ObjLoader\list.cpp">
+      <Filter>Obj</Filter>
+    </ClCompile>
+    <ClCompile Include="GLFW\GLFWEngine.cpp">
+      <Filter>GLFW</Filter>
+    </ClCompile>
+    <ClCompile Include="GLFWKeyListener.cpp">
+      <Filter>GLFW</Filter>
+    </ClCompile>
+    <ClCompile Include="GLGUI\fonttex.cpp">
+      <Filter>GUI</Filter>
+    </ClCompile>
+    <ClCompile Include="GLGUI\GUIBase.cpp">
+      <Filter>GUI</Filter>
+    </ClCompile>
+    <ClCompile Include="GLGUI\GUIElement.cpp">
+      <Filter>GUI</Filter>
+    </ClCompile>
+    <ClCompile Include="GLGUI\GUITextBox.cpp">
+      <Filter>GUI</Filter>
+    </ClCompile>
+    <ClCompile Include="GLGUI\GUITray.cpp">
+      <Filter>GUI</Filter>
+    </ClCompile>
+    <ClCompile Include="GLGUI\Primitives.cpp">
+      <Filter>GUI</Filter>
+    </ClCompile>
+    <ClCompile Include="GLGUI\Slider.cpp">
+      <Filter>GUI</Filter>
+    </ClCompile>
+    <ClCompile Include="Camera\Camera.cpp">
+      <Filter>Camera</Filter>
+    </ClCompile>
+    <ClCompile Include="Camera\CameraController.cpp">
+      <Filter>Camera</Filter>
+    </ClCompile>
+    <ClCompile Include="stb_image.c">
+      <Filter>Image</Filter>
+    </ClCompile>
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="BasicEngine.h" />
+    <ClInclude Include="BasicObjects.h" />
+    <ClInclude Include="Colour.h" />
+    <ClInclude Include="CubeMap.h" />
+    <ClInclude Include="DebugDraw.h" />
+    <ClInclude Include="FBOManager.h" />
+    <ClInclude Include="FrameBufferObject.h" />
+    <ClInclude Include="GLGUI\shaderDefs.h" />
+    <ClInclude Include="MiscUtils.h" />
+    <ClInclude Include="NamedCollection.h" />
+    <ClInclude Include="QuadDrawer.h" />
+    <ClInclude Include="Shader.h" />
+    <ClInclude Include="ShaderManager.h" />
+    <ClInclude Include="BasicTexture.h" />
+    <ClInclude Include="StaticMesh.h" />
+    <ClInclude Include="Uniform.h" />
+    <ClInclude Include="SubMesh.h" />
+    <ClInclude Include="WindowSettings.h" />
+    <ClInclude Include="svl\Basics.h">
+      <Filter>SVL</Filter>
+    </ClInclude>
+    <ClInclude Include="svl\Mat.h">
+      <Filter>SVL</Filter>
+    </ClInclude>
+    <ClInclude Include="svl\Mat2.h">
+      <Filter>SVL</Filter>
+    </ClInclude>
+    <ClInclude Include="svl\Mat3.h">
+      <Filter>SVL</Filter>
+    </ClInclude>
+    <ClInclude Include="svl\Mat4.h">
+      <Filter>SVL</Filter>
+    </ClInclude>
+    <ClInclude Include="svl\Quaternion.h">
+      <Filter>SVL</Filter>
+    </ClInclude>
+    <ClInclude Include="svl\SVL.h">
+      <Filter>SVL</Filter>
+    </ClInclude>
+    <ClInclude Include="svl\SVLgl.h">
+      <Filter>SVL</Filter>
+    </ClInclude>
+    <ClInclude Include="svl\Transform.h">
+      <Filter>SVL</Filter>
+    </ClInclude>
+    <ClInclude Include="svl\Utils.h">
+      <Filter>SVL</Filter>
+    </ClInclude>
+    <ClInclude Include="svl\Vec.h">
+      <Filter>SVL</Filter>
+    </ClInclude>
+    <ClInclude Include="svl\Vec2.h">
+      <Filter>SVL</Filter>
+    </ClInclude>
+    <ClInclude Include="svl\Vec3.h">
+      <Filter>SVL</Filter>
+    </ClInclude>
+    <ClInclude Include="svl\Vec4.h">
+      <Filter>SVL</Filter>
+    </ClInclude>
+    <ClInclude Include="ObjLoader\obj_parser.h">
+      <Filter>Obj</Filter>
+    </ClInclude>
+    <ClInclude Include="ObjLoader\objLoader.h">
+      <Filter>Obj</Filter>
+    </ClInclude>
+    <ClInclude Include="ObjLoader\string_extra.h">
+      <Filter>Obj</Filter>
+    </ClInclude>
+    <ClInclude Include="ObjLoader\list.h">
+      <Filter>Obj</Filter>
+    </ClInclude>
+    <ClInclude Include="GLFW\GLFWEngine.h">
+      <Filter>GLFW</Filter>
+    </ClInclude>
+    <ClInclude Include="GLFWKeyListener.h">
+      <Filter>GLFW</Filter>
+    </ClInclude>
+    <ClInclude Include="GLGUI\fonttex.h">
+      <Filter>GUI</Filter>
+    </ClInclude>
+    <ClInclude Include="GLGUI\GUIBase.h">
+      <Filter>GUI</Filter>
+    </ClInclude>
+    <ClInclude Include="GLGUI\GUIElement.h">
+      <Filter>GUI</Filter>
+    </ClInclude>
+    <ClInclude Include="GLGUI\GUITextBox.h">
+      <Filter>GUI</Filter>
+    </ClInclude>
+    <ClInclude Include="GLGUI\GUITray.h">
+      <Filter>GUI</Filter>
+    </ClInclude>
+    <ClInclude Include="GLGUI\Primitives.h">
+      <Filter>GUI</Filter>
+    </ClInclude>
+    <ClInclude Include="GLGUI\Slider.h">
+      <Filter>GUI</Filter>
+    </ClInclude>
+    <ClInclude Include="GLGUI\VarChange.h">
+      <Filter>GUI</Filter>
+    </ClInclude>
+    <ClInclude Include="GLGUI\VarPrint.h">
+      <Filter>GUI</Filter>
+    </ClInclude>
+    <ClInclude Include="GLGUI\VarWatch.h">
+      <Filter>GUI</Filter>
+    </ClInclude>
+    <ClInclude Include="Camera\CameraController.h">
+      <Filter>Camera</Filter>
+    </ClInclude>
+    <ClInclude Include="Camera\Camera.h">
+      <Filter>Camera</Filter>
+    </ClInclude>
+    <ClInclude Include="stb_image.h">
+      <Filter>Image</Filter>
+    </ClInclude>
+  </ItemGroup>
+  <ItemGroup>
+    <Filter Include="SVL">
+      <UniqueIdentifier>{3c40405f-5360-4abe-b527-d903d30f3f01}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Obj">
+      <UniqueIdentifier>{c3fcb788-8dd8-4ce1-8f03-26b60ba363b6}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="GLFW">
+      <UniqueIdentifier>{185e7224-1dcc-425d-a8f2-731c7f7aa3fa}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="GUI">
+      <UniqueIdentifier>{7aebdb4f-db33-43d3-b42a-3a90645581db}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Camera">
+      <UniqueIdentifier>{9b055872-3415-4e87-8224-0f40fdebed4c}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Image">
+      <UniqueIdentifier>{87eea331-f527-4ff4-b1c1-3758cc5bb8c3}</UniqueIdentifier>
+    </Filter>
+  </ItemGroup>
+</Project>

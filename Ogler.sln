@@ -1,0 +1,26 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Express 2012 for Windows Desktop
+Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "Ogler", "Ogler\Ogler.vcxproj", "{0A23B455-E6FD-4075-96D4-A14083E09A76}"
+EndProject
+Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "Ogler", "Oglertest\Oglertest.vcxproj", "{A52168B2-4898-4976-A6CD-FFFD060C8825}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Win32 = Debug|Win32
+		Release|Win32 = Release|Win32
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{0A23B455-E6FD-4075-96D4-A14083E09A76}.Debug|Win32.ActiveCfg = Debug|Win32
+		{0A23B455-E6FD-4075-96D4-A14083E09A76}.Debug|Win32.Build.0 = Debug|Win32
+		{0A23B455-E6FD-4075-96D4-A14083E09A76}.Release|Win32.ActiveCfg = Release|Win32
+		{0A23B455-E6FD-4075-96D4-A14083E09A76}.Release|Win32.Build.0 = Release|Win32
+		{A52168B2-4898-4976-A6CD-FFFD060C8825}.Debug|Win32.ActiveCfg = Debug|Win32
+		{A52168B2-4898-4976-A6CD-FFFD060C8825}.Debug|Win32.Build.0 = Debug|Win32
+		{A52168B2-4898-4976-A6CD-FFFD060C8825}.Release|Win32.ActiveCfg = Release|Win32
+		{A52168B2-4898-4976-A6CD-FFFD060C8825}.Release|Win32.Build.0 = Release|Win32
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+EndGlobal

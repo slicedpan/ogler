@@ -1,0 +1,166 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project DefaultTargets="Build" ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <ItemGroup Label="ProjectConfigurations">
+    <ProjectConfiguration Include="Debug|Win32">
+      <Configuration>Debug</Configuration>
+      <Platform>Win32</Platform>
+    </ProjectConfiguration>
+    <ProjectConfiguration Include="Release|Win32">
+      <Configuration>Release</Configuration>
+      <Platform>Win32</Platform>
+    </ProjectConfiguration>
+  </ItemGroup>
+  <ItemGroup>
+    <ClCompile Include="BasicEngine.cpp" />
+    <ClCompile Include="BasicObjects.cpp" />
+    <ClCompile Include="Camera\CameraController.cpp" />
+    <ClCompile Include="Camera\Camera.cpp" />
+    <ClCompile Include="Colour.cpp" />
+    <ClCompile Include="CubeMap.cpp" />
+    <ClCompile Include="FBOManager.cpp" />
+    <ClCompile Include="FrameBufferObject.cpp" />
+    <ClCompile Include="GLFWKeyListener.cpp" />
+    <ClCompile Include="GLFW\GLFWEngine.cpp" />
+    <ClCompile Include="GLGUI\fonttex.cpp" />
+    <ClCompile Include="GLGUI\GUIBase.cpp" />
+    <ClCompile Include="GLGUI\GUIElement.cpp" />
+    <ClCompile Include="GLGUI\GUITextBox.cpp" />
+    <ClCompile Include="GLGUI\GUITray.cpp" />
+    <ClCompile Include="GLGUI\Primitives.cpp" />
+    <ClCompile Include="GLGUI\shaders.cpp" />
+    <ClCompile Include="GLGUI\Slider.cpp" />
+    <ClCompile Include="MiscUtils.cpp" />
+    <ClCompile Include="QuadDrawer.cpp" />
+    <ClCompile Include="ObjLoader\list.cpp" />
+    <ClCompile Include="ObjLoader\objLoader.cpp" />
+    <ClCompile Include="ObjLoader\obj_parser.cpp" />
+    <ClCompile Include="ObjLoader\string_extra.cpp" />
+    <ClCompile Include="Shader.cpp" />
+    <ClCompile Include="ShaderManager.cpp" />
+    <ClCompile Include="BasicTexture.cpp" />
+    <ClCompile Include="StaticMesh.cpp" />
+    <ClCompile Include="stb_image.c" />
+    <ClCompile Include="svl\Basics.cpp" />
+    <ClCompile Include="svl\Mat.cpp" />
+    <ClCompile Include="svl\Mat2.cpp" />
+    <ClCompile Include="svl\Mat3.cpp" />
+    <ClCompile Include="svl\Mat4.cpp" />
+    <ClCompile Include="svl\Vec.cpp" />
+    <ClCompile Include="svl\Vec2.cpp" />
+    <ClCompile Include="svl\Vec3.cpp" />
+    <ClCompile Include="svl\Vec4.cpp" />
+    <ClCompile Include="Uniform.cpp" />
+    <ClCompile Include="SubMesh.cpp" />
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="BasicEngine.h" />
+    <ClInclude Include="BasicObjects.h" />
+    <ClInclude Include="Camera\CameraController.h" />
+    <ClInclude Include="Camera\Camera.h" />
+    <ClInclude Include="Colour.h" />
+    <ClInclude Include="CubeMap.h" />
+    <ClInclude Include="DebugDraw.h" />
+    <ClInclude Include="FBOManager.h" />
+    <ClInclude Include="FrameBufferObject.h" />
+    <ClInclude Include="GLFWKeyListener.h" />
+    <ClInclude Include="GLFW\GLFWEngine.h" />
+    <ClInclude Include="GLGUI\fonttex.h" />
+    <ClInclude Include="GLGUI\GUIBase.h" />
+    <ClInclude Include="GLGUI\GUIElement.h" />
+    <ClInclude Include="GLGUI\GUITextBox.h" />
+    <ClInclude Include="GLGUI\GUITray.h" />
+    <ClInclude Include="GLGUI\Primitives.h" />
+    <ClInclude Include="GLGUI\shaderDefs.h" />
+    <ClInclude Include="GLGUI\Slider.h" />
+    <ClInclude Include="GLGUI\VarChange.h" />
+    <ClInclude Include="GLGUI\VarPrint.h" />
+    <ClInclude Include="GLGUI\VarWatch.h" />
+    <ClInclude Include="MiscUtils.h" />
+    <ClInclude Include="NamedCollection.h" />
+    <ClInclude Include="QuadDrawer.h" />
+    <ClInclude Include="ObjLoader\list.h" />
+    <ClInclude Include="ObjLoader\objLoader.h" />
+    <ClInclude Include="ObjLoader\obj_parser.h" />
+    <ClInclude Include="ObjLoader\string_extra.h" />
+    <ClInclude Include="Shader.h" />
+    <ClInclude Include="ShaderManager.h" />
+    <ClInclude Include="BasicTexture.h" />
+    <ClInclude Include="StaticMesh.h" />
+    <ClInclude Include="stb_image.h" />
+    <ClInclude Include="svl\Basics.h" />
+    <ClInclude Include="svl\Mat.h" />
+    <ClInclude Include="svl\Mat2.h" />
+    <ClInclude Include="svl\Mat3.h" />
+    <ClInclude Include="svl\Mat4.h" />
+    <ClInclude Include="svl\Quaternion.h" />
+    <ClInclude Include="svl\SVL.h" />
+    <ClInclude Include="svl\SVLgl.h" />
+    <ClInclude Include="svl\Transform.h" />
+    <ClInclude Include="svl\Utils.h" />
+    <ClInclude Include="svl\Vec.h" />
+    <ClInclude Include="svl\Vec2.h" />
+    <ClInclude Include="svl\Vec3.h" />
+    <ClInclude Include="svl\Vec4.h" />
+    <ClInclude Include="Uniform.h" />
+    <ClInclude Include="SubMesh.h" />
+    <ClInclude Include="WindowSettings.h" />
+  </ItemGroup>
+  <PropertyGroup Label="Globals">
+    <ProjectGuid>{0A23B455-E6FD-4075-96D4-A14083E09A76}</ProjectGuid>
+    <RootNamespace>GLUtils</RootNamespace>
+  </PropertyGroup>
+  <Import Project="$(VCTargetsPath)\Microsoft.Cpp.Default.props" />
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'" Label="Configuration">
+    <ConfigurationType>StaticLibrary</ConfigurationType>
+    <UseDebugLibraries>true</UseDebugLibraries>
+    <CharacterSet>MultiByte</CharacterSet>
+    <PlatformToolset>v110</PlatformToolset>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'" Label="Configuration">
+    <ConfigurationType>StaticLibrary</ConfigurationType>
+    <UseDebugLibraries>false</UseDebugLibraries>
+    <WholeProgramOptimization>true</WholeProgramOptimization>
+    <CharacterSet>MultiByte</CharacterSet>
+    <PlatformToolset>v110</PlatformToolset>
+  </PropertyGroup>
+  <Import Project="$(VCTargetsPath)\Microsoft.Cpp.props" />
+  <ImportGroup Label="ExtensionSettings">
+  </ImportGroup>
+  <ImportGroup Label="PropertySheets" Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">
+    <Import Project="$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props" Condition="exists('$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props')" Label="LocalAppDataPlatform" />
+  </ImportGroup>
+  <ImportGroup Label="PropertySheets" Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">
+    <Import Project="$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props" Condition="exists('$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props')" Label="LocalAppDataPlatform" />
+  </ImportGroup>
+  <PropertyGroup Label="UserMacros" />
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">
+    <TargetName>$(ProjectName)_d</TargetName>
+  </PropertyGroup>
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">
+    <ClCompile>
+      <WarningLevel>Level3</WarningLevel>
+      <Optimization>Disabled</Optimization>
+      <AdditionalIncludeDirectories>$(BOOSTDIR);%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+    </ClCompile>
+    <Link>
+      <GenerateDebugInformation>true</GenerateDebugInformation>
+    </Link>
+  </ItemDefinitionGroup>
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">
+    <ClCompile>
+      <WarningLevel>Level3</WarningLevel>
+      <Optimization>MaxSpeed</Optimization>
+      <FunctionLevelLinking>true</FunctionLevelLinking>
+      <IntrinsicFunctions>true</IntrinsicFunctions>
+      <AdditionalIncludeDirectories>$(BOOSTDIR);%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+    </ClCompile>
+    <Link>
+      <GenerateDebugInformation>true</GenerateDebugInformation>
+      <EnableCOMDATFolding>true</EnableCOMDATFolding>
+      <OptimizeReferences>true</OptimizeReferences>
+    </Link>
+  </ItemDefinitionGroup>
+  <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
+  <ImportGroup Label="ExtensionTargets">
+  </ImportGroup>
+</Project>
