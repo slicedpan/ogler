@@ -2,7 +2,8 @@
 #define GLFWENGINE_H
 
 #include "../BasicEngine.h"
-#include "../GLFWKeyListener.h"
+#include "GLFWKeyListener.h"
+#include "GLFWWindowSizeListener.h"
 
 struct WindowSettings;
 
@@ -14,7 +15,7 @@ public:
 };
 
 class GLFWEngine :
-	public BasicEngine, public GLFWKeyListener
+	public BasicEngine, public GLFWKeyListener, protected GLFWWindowSizeListener
 {
 private:
 	int InitWindow(WindowSettings& windowSettings);
@@ -22,10 +23,12 @@ private:
 public:
 	GLFWEngine(void);
 	GLFWEngine(WindowSettings& windowSettings);
-	virtual ~GLFWEngine(void);	
+	virtual ~GLFWEngine(void);		
 	void EndFrame();
 	WindowSettings& Window;
-
+	virtual void ResizeWindow(int newWidth, int newHeight) {}
+protected:
+	void _resize(int width, int height);
 };
 
 #endif

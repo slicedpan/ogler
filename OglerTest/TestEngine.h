@@ -2,6 +2,7 @@
 #define TESTENGINE_H
 
 #include "GLFW/GLFWEngine.h"
+#include "GLGUI\GUIBase.h"
 #include <vector>
 
 class Shader;
@@ -38,6 +39,7 @@ private:
 	std::vector<Shader*> equationShaders;
 	int currentEq;
 	int iterations;
+	GUIBase* guiBase;
 };
 
 #endif

@@ -1,7 +1,7 @@
 #ifndef GLFWKEYLISTENER_H
 #define GLFWKEYLISTENER_H
 
-#include "MiscUtils.h"
+#include "../MiscUtils.h"
 
 class GLFWKeyListener
 {

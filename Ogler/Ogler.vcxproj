@@ -27,8 +27,9 @@
     <ClCompile Include="CubeMap.cpp" />
     <ClCompile Include="FBOManager.cpp" />
     <ClCompile Include="FrameBufferObject.cpp" />
-    <ClCompile Include="GLFWKeyListener.cpp" />
     <ClCompile Include="GLFW\GLFWEngine.cpp" />
+    <ClCompile Include="GLFW\GLFWKeyListener.cpp" />
+    <ClCompile Include="GLFW\GLFWWindowSizeListener.cpp" />
     <ClCompile Include="GLGUI\fonttex.cpp" />
     <ClCompile Include="GLGUI\GUIBase.cpp" />
     <ClCompile Include="GLGUI\GUIElement.cpp" />
@@ -70,8 +71,9 @@
     <ClInclude Include="DebugDraw.h" />
     <ClInclude Include="FBOManager.h" />
     <ClInclude Include="FrameBufferObject.h" />
-    <ClInclude Include="GLFWKeyListener.h" />
     <ClInclude Include="GLFW\GLFWEngine.h" />
+    <ClInclude Include="GLFW\GLFWKeyListener.h" />
+    <ClInclude Include="GLFW\GLFWWindowSizeListener.h" />
     <ClInclude Include="GLGUI\fonttex.h" />
     <ClInclude Include="GLGUI\GUIBase.h" />
     <ClInclude Include="GLGUI\GUIElement.h" />

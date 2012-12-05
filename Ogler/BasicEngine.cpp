@@ -46,6 +46,7 @@ void BasicEngine::Run()
 		}
 		EndFrame();
 		lastTime = frameBegin;
+		GUI.Update();
 	}
 }
 

@@ -1,5 +1,6 @@
 #include "GUITextBox.h"
 #include "Primitives.h"
+#include "GUIBase.h"
 
 GUITextBox::GUITextBox(std::string label) : label(label)
 {
@@ -14,5 +15,5 @@ GUITextBox::~GUITextBox(void)
 void GUITextBox::Draw(Vec2& position)
 {
 	DrawBGQuad(colour * 0.5f, position, width, height, 1, true);
-	PrintText(position + Vec2(3, 3), label.c_str(), textColour);
+	PrintText(owner->GetScreenSize(), position + Vec2(3, 3), label.c_str(), textColour);
 }

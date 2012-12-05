@@ -1,6 +1,9 @@
 #include "TestEngine.h"
 #include "Shader.h"
 #include "GLGUI/Primitives.h"
+#include "GLGUI\GUITray.h"
+#include "GLGUI\GUIElement.h"
+#include "GLGUI\GUITextBox.h"
 #include "Colour.h"
 #include "MiscUtils.h"
 #include "ShaderManager.h"
@@ -159,6 +162,8 @@ void TestEngine::Display()
 	PrintText(screenSize, Vec2(-400, -620), buf, Colour::White);
 	sprintf(buf, "[/]: change equation");
 	PrintText(screenSize, Vec2(-400, -660), buf, Colour::White);
+
+	GUI.Draw();
 	
 }
 
@@ -252,4 +257,7 @@ void TestEngine::Setup()
 
 	currentEq = 0;
 
+	GUI.CreateTray(0, 0, 0, "menu");
+	GUI.Trays["menu"]->AddElement(new GUITextBox("blahasdasdasdasdasdasdasdasdasdasd"));
+	GUI.Trays["menu"]->SetTextColour(Vec4(1.0, 0.0, 0.0, 1.0));
 }

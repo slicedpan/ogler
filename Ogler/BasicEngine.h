@@ -2,6 +2,7 @@
 #define BASICENGINE_H
 
 #include "MiscUtils.h"
+#include "GLGUI\GUIBase.h"
 
 class ITimerProvider
 {
@@ -32,6 +33,8 @@ public:
 	int MaxFPS;
 	void Exit();
 	const int& CurrentFPS;
+protected:
+	GUIBase GUI;
 private:
 	bool running;
 	int currentFPS;
