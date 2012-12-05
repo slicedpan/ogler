@@ -103,6 +103,8 @@ void GLFWTimerProvider::Sleep(double amount)
 void GLFWEngine::_resize(int width, int height)
 {
 	GUI.SetWindowSize(width, height);
+	Window.Width = width;
+	Window.Height = height;
 	ResizeWindow(width, height);
 }
 
