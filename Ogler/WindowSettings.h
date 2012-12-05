@@ -17,8 +17,9 @@ struct WindowSettings
 		Width = 800;
 		OpenGLVersionMajor = 3;
 		OpenGLVersionMinor = 3;
-		Title = "GLFW Engine Window";
+		Title = "";
 		Fullscreen = false;
+		CoreProfile = false;
 	}
 	int RedBits;
 	int GreenBits;
@@ -32,6 +33,7 @@ struct WindowSettings
 	int OpenGLVersionMajor;
 	std::string Title;
 	bool Fullscreen;
+	bool CoreProfile;
 };
 
 #endif
