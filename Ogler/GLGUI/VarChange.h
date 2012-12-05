@@ -33,7 +33,7 @@ class VarChange<float> : public IVarChange<float>
 	{
 		*value = min + (max - min) * sliderValue;
 	}
-}
+};
 
 template<>
 class VarChange<int> : public IVarChange<int>
@@ -42,4 +42,4 @@ class VarChange<int> : public IVarChange<int>
 	{
 		*value = min + int((max - min) * sliderValue);
 	}
-}
+};

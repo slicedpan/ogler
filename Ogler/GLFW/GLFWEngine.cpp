@@ -25,8 +25,10 @@ GLFWEngine::GLFWEngine(WindowSettings& w) : BasicEngine(new GLFWTimerProvider())
 		printf("Could not open window");
 
 	KeyInit();
-
+	InitListen();
 }
+
+
 
 int GLFWEngine::InitWindow(WindowSettings& w)
 {
@@ -97,5 +99,13 @@ void GLFWTimerProvider::Sleep(double amount)
 {
 	glfwSleep(amount);
 }
+
+void GLFWEngine::_resize(int width, int height)
+{
+	GUI.SetWindowSize(width, height);
+	ResizeWindow(width, height);
+}
+
+
 
 

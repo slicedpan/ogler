@@ -1,7 +1,6 @@
 #pragma once
 #include "guielement.h"
 #include "Primitives.h"
-#include "glFunctions.h"
 #include <string>
 
 template<typename T>

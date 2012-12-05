@@ -58,9 +58,6 @@
     <ClCompile Include="GLFW\GLFWEngine.cpp">
       <Filter>GLFW</Filter>
     </ClCompile>
-    <ClCompile Include="GLFWKeyListener.cpp">
-      <Filter>GLFW</Filter>
-    </ClCompile>
     <ClCompile Include="GLGUI\fonttex.cpp">
       <Filter>GUI</Filter>
     </ClCompile>
@@ -90,6 +87,12 @@
     </ClCompile>
     <ClCompile Include="stb_image.c">
       <Filter>Image</Filter>
+    </ClCompile>
+    <ClCompile Include="GLFW\GLFWKeyListener.cpp">
+      <Filter>GLFW</Filter>
+    </ClCompile>
+    <ClCompile Include="GLFW\GLFWWindowSizeListener.cpp">
+      <Filter>GLFW</Filter>
     </ClCompile>
   </ItemGroup>
   <ItemGroup>
@@ -168,9 +171,6 @@
     <ClInclude Include="GLFW\GLFWEngine.h">
       <Filter>GLFW</Filter>
     </ClInclude>
-    <ClInclude Include="GLFWKeyListener.h">
-      <Filter>GLFW</Filter>
-    </ClInclude>
     <ClInclude Include="GLGUI\fonttex.h">
       <Filter>GUI</Filter>
     </ClInclude>
@@ -209,6 +209,12 @@
     </ClInclude>
     <ClInclude Include="stb_image.h">
       <Filter>Image</Filter>
+    </ClInclude>
+    <ClInclude Include="GLFW\GLFWKeyListener.h">
+      <Filter>GLFW</Filter>
+    </ClInclude>
+    <ClInclude Include="GLFW\GLFWWindowSizeListener.h">
+      <Filter>GLFW</Filter>
     </ClInclude>
   </ItemGroup>
   <ItemGroup>

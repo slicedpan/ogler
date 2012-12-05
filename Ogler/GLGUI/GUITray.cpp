@@ -18,6 +18,10 @@ GUITray::GUITray(int xPos, int yPos, unsigned int growDirection)
 	textColour = Vec4(0, 0, 0, 1);
 }
 
+void GUITray::Update()
+{
+}
+
 GUITray::~GUITray(void)
 {
 }
@@ -48,6 +52,7 @@ void GUITray::AddElement(GUIElement* element)
 	height += element->GetHeight();
 	element->SetColour(colour);
 	element->SetTextColour(textColour);
+	element->owner = this->owner;
 }
 
 void GUITray::AddTextBox(std::string text)

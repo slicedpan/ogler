@@ -2,7 +2,9 @@
 
 #include <vector>
 #include "../svl/svl.h"
+#include <string>
 
+class GUIBase;
 class GUIElement;
 
 class GUITray
@@ -18,6 +20,7 @@ public:
 	void AddElement(GUIElement* element);
 	void SetColour(Vec4& colour);
 	void SetTextColour(Vec4& textColour);
+	void Update();
 private:
 	std::vector<GUIElement*> elements;
 	Vec4 colour;
@@ -29,6 +32,8 @@ private:
 	void DrawLBorder(bool repeat);
 	void DrawTBorder(bool repeat);
 	void DrawRBorder(bool repeat);
-	void DrawBBorder(bool repeat);
+	void DrawBBorder(bool repeat);	
+	GUIBase* owner;
+	friend class GUIBase;
 };
 
