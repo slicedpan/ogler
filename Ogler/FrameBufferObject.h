@@ -20,8 +20,6 @@ public:
 	void AttachDepthTexture(std::string textureName, GLenum magFilter = GL_LINEAR, GLenum minFilter = GL_LINEAR, GLenum depthFormat = GL_DEPTH_COMPONENT);
 	GLuint GetTextureID(std::string name);
 	GLuint GetTextureID(GLuint index);
-	FBOTexture* GetTexture(std::string name);
-	FBOTexture* GetTexture(GLuint index);
 	bool CheckCompleteness();
 	void Bind();
 	void Unbind();
@@ -47,6 +45,8 @@ private:
 	static bool resetViewport;
 	bool setDrawBuffers;
 	bool bound;
+	FBOTexture* GetTexture(std::string name);
+	FBOTexture* GetTexture(GLuint index);
 public:
 	const bool& Bound;
 	const int& Width;
