@@ -39,8 +39,8 @@ void QuadDrawer::DrawQuad(Vec2& min, Vec2& max, Vec2& pixSize)
 	instance->vertexData[3].position[0] = min[0];
 	instance->vertexData[3].position[1] = max[1];
 
-	if (ShaderManager::GetSingletonPtr()->GetCurrent())
-		ShaderManager::GetSingletonPtr()->GetCurrent()->Uniforms["pixSize"].SetValue(pixSize);	
+	//if (ShaderManager::GetSingletonPtr()->GetCurrent())
+		//ShaderManager::GetSingletonPtr()->GetCurrent()->Uniforms["pixSize"].SetValue(pixSize);	
 
 	glBindBuffer(GL_ARRAY_BUFFER, instance->vboID);
 	glBufferData(GL_ARRAY_BUFFER, sizeof(vertex) * 4, instance->vertexData, GL_DYNAMIC_DRAW);
