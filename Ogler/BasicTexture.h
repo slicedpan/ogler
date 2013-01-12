@@ -6,7 +6,7 @@
 class BasicTexture
 {
 public:
-	BasicTexture(char* filename);
+	BasicTexture(const char* filename);
 	~BasicTexture(void);
 	unsigned int GetId() { return glID; }
 	void Load();

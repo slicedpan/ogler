@@ -94,6 +94,9 @@
     <ClCompile Include="GLFW\GLFWWindowSizeListener.cpp">
       <Filter>GLFW</Filter>
     </ClCompile>
+    <ClCompile Include="GLFW\GLFWMouseListener.cpp">
+      <Filter>GLFW</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="BasicEngine.h" />
@@ -214,6 +217,9 @@
       <Filter>GLFW</Filter>
     </ClInclude>
     <ClInclude Include="GLFW\GLFWWindowSizeListener.h">
+      <Filter>GLFW</Filter>
+    </ClInclude>
+    <ClInclude Include="GLFW\GLFWMouseListener.h">
       <Filter>GLFW</Filter>
     </ClInclude>
   </ItemGroup>

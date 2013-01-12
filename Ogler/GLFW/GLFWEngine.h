@@ -4,6 +4,7 @@
 #include "../BasicEngine.h"
 #include "GLFWKeyListener.h"
 #include "GLFWWindowSizeListener.h"
+#include "GLFWMouseListener.h"
 
 struct WindowSettings;
 
@@ -15,7 +16,7 @@ public:
 };
 
 class GLFWEngine :
-	public BasicEngine, public GLFWKeyListener, protected GLFWWindowSizeListener
+	public BasicEngine, public GLFWKeyListener, protected GLFWWindowSizeListener, public GLFWMouseListener
 {
 private:
 	int InitWindow(WindowSettings& windowSettings);

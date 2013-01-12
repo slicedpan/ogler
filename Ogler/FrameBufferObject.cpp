@@ -5,19 +5,17 @@ int FrameBufferObject::screenHeight= -1;
 int FrameBufferObject::screenWidth = -1;
 bool FrameBufferObject::resetViewport = true;
 
-FrameBufferObject::FrameBufferObject(int width, int height, int depthBufferBitDepth, int stencilBufferBitDepth, GLenum textureFormat, GLenum textureType, std::string name)
+FrameBufferObject::FrameBufferObject(std::string name)
 	: width(width),
 	height(height),
-	textureFormat(textureFormat),
-	textureType(textureType),
+	textureFormat(GL_RGBA),
+	textureType(GL_TEXTURE_2D),
 	texNum(0),
 	nextIndex(0),
 	Height(this->height),
 	Width(this->width),
 	Bound(this->bound)
 {
-	if (!glGenFramebuffers)
-		throw;
 
 	bound = false;
 	setDrawBuffers = false;
@@ -32,8 +30,25 @@ FrameBufferObject::FrameBufferObject(int width, int height, int depthBufferBitDe
 	{
 		this->name = name;
 	}
+	glID = 0;
+}
+
+void FrameBufferObject::Create(int width, int height, int depthBufferBitDepth, int stencilBufferBitDepth, GLenum textureFormat, GLenum textureType)
+{
+	bool rebind = false;
+	if (bound)
+	{
+		Unbind();
+		rebind = true;
+	}
+	if (glID)
+		glDeleteFramebuffers(1, &glID);
+
+	this->width = width;
+	this->height = height;
 
 	glGenFramebuffers(1, &glID);
+	
 	glBindFramebuffer(GL_FRAMEBUFFER, glID);
 	if (depthBufferBitDepth || stencilBufferBitDepth)
 	{
@@ -47,6 +62,7 @@ FrameBufferObject::FrameBufferObject(int width, int height, int depthBufferBitDe
 			GLuint id;
 			glGenRenderbuffers(1, &id);
 			renderBuffers.push_back(id);
+			renderBufferFormats.push_back(format);
 			glBindRenderbuffer(GL_RENDERBUFFER, id);
 			glRenderbufferStorage(GL_RENDERBUFFER, format, width, height);
 			glFramebufferRenderbuffer(GL_FRAMEBUFFER, GL_DEPTH_STENCIL_ATTACHMENT, GL_RENDERBUFFER, id);
@@ -62,13 +78,47 @@ FrameBufferObject::FrameBufferObject(int width, int height, int depthBufferBitDe
 			GLuint id;
 			glGenRenderbuffers(1, &id);
 			renderBuffers.push_back(id);
+			renderBufferFormats.push_back(format);
 			glBindRenderbuffer(GL_RENDERBUFFER, id);
 			glRenderbufferStorage(GL_RENDERBUFFER, format, width, height);
 			glFramebufferRenderbuffer(GL_FRAMEBUFFER, GL_DEPTH_ATTACHMENT, GL_RENDERBUFFER, id);			
-			
-		}		
-	}	
+		}
+		
+	}
 	glBindFramebuffer(GL_FRAMEBUFFER, 0);
+
+	if (rebind)
+		Bind();
+}
+
+FrameBufferObject::FrameBufferObject(int width, int height, int depthBufferBitDepth, int stencilBufferBitDepth, GLenum textureFormat, GLenum textureType, std::string name)
+	: width(width),
+	height(height),
+	textureFormat(textureFormat),
+	textureType(textureType),
+	texNum(0),
+	nextIndex(0),
+	Height(this->height),
+	Width(this->width),
+	Bound(this->bound)
+{
+
+	bound = false;
+	setDrawBuffers = false;
+
+	if (name == "")
+	{
+		char buf[64];
+		sprintf(buf, "unnamed%d", ++nextIndex);
+		this->name = buf;
+	}
+	else
+	{
+		this->name = name;
+	}
+
+	glID = 0;
+	Create(width, height, depthBufferBitDepth, stencilBufferBitDepth, textureFormat, textureType);
 
 }
 
@@ -91,6 +141,8 @@ void FrameBufferObject::AttachTextureTo(std::string name, GLenum magFilter, GLen
 {
 	FBOTexture* tex = new FBOTexture();
 	tex->name = name;
+	tex->type = GL_TEXTURE_2D;
+	tex->format = texFormat;
 	glGenTextures(1, &tex->glID);
 	glBindTexture(textureType, tex->glID);
 	glTexImage2D(textureType, 0, texFormat, width, height, 0, extFormat, GL_FLOAT, 0);
@@ -138,6 +190,11 @@ GLuint FrameBufferObject::GetTextureID(GLuint index)
 
 bool FrameBufferObject::CheckCompleteness()
 {
+	if (!glID)
+	{
+		printf("Buffer not created yet!\n");
+		return false;
+	}
 	glBindFramebuffer(GL_FRAMEBUFFER, glID);
 	GLenum result = glCheckFramebufferStatus(GL_FRAMEBUFFER);
 	glBindFramebuffer(GL_FRAMEBUFFER, 0);
@@ -194,3 +251,50 @@ void FrameBufferObject::Unbind()
 		glDrawBuffer(GL_COLOR_ATTACHMENT0);
 	bound = false;
 }
+
+void FrameBufferObject::ResizeBuffers(int width, int height)
+{
+	for (int i = 0; i < renderBuffers.size(); ++i)
+	{
+		glBindRenderbuffer(GL_RENDERBUFFER, renderBuffers[i]);
+		glRenderbufferStorage(GL_RENDERBUFFER, renderBufferFormats[i], width, height);
+	}
+	glBindRenderbuffer(GL_RENDERBUFFER, 0);
+}
+
+void FrameBufferObject::ResizeTextures(int width, int height)
+{
+	for (int i = 0; i < textures.size(); ++i)
+	{
+		glBindTexture(textures[i]->type, textures[i]->glID);
+		glTexImage2D(textures[i]->type, 0, textures[i]->format, width, height, 0, GL_RGBA, GL_UNSIGNED_BYTE, 0);
+		glBindTexture(textures[i]->type, 0);
+	}	
+}
+
+void FrameBufferObject::Resize(int width, int height)
+{
+	bool rebind = false;
+	if (bound)
+	{
+		Unbind();
+		rebind = true;
+	}
+	ResizeBuffers(width, height);
+	ResizeTextures(width, height);
+	this->width = width;
+	this->height = height;
+	if (rebind)
+		Bind();
+}
+
+void FrameBufferObject::SetTextureFormat(GLenum texFormat)
+{
+	textureFormat = texFormat;
+}
+
+void FrameBufferObject::SetTextureType(GLenum texType)
+{
+	textureType = texType;
+}
+

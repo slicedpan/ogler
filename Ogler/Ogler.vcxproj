@@ -29,6 +29,7 @@
     <ClCompile Include="FrameBufferObject.cpp" />
     <ClCompile Include="GLFW\GLFWEngine.cpp" />
     <ClCompile Include="GLFW\GLFWKeyListener.cpp" />
+    <ClCompile Include="GLFW\GLFWMouseListener.cpp" />
     <ClCompile Include="GLFW\GLFWWindowSizeListener.cpp" />
     <ClCompile Include="GLGUI\fonttex.cpp" />
     <ClCompile Include="GLGUI\GUIBase.cpp" />
@@ -73,6 +74,7 @@
     <ClInclude Include="FrameBufferObject.h" />
     <ClInclude Include="GLFW\GLFWEngine.h" />
     <ClInclude Include="GLFW\GLFWKeyListener.h" />
+    <ClInclude Include="GLFW\GLFWMouseListener.h" />
     <ClInclude Include="GLFW\GLFWWindowSizeListener.h" />
     <ClInclude Include="GLGUI\fonttex.h" />
     <ClInclude Include="GLGUI\GUIBase.h" />
@@ -186,8 +188,7 @@
     </Link>
     <Lib>
       <AdditionalLibraryDirectories>$(BOOSTDIR)/$(Platform)</AdditionalLibraryDirectories>
-      <AdditionalDependencies>
-      </AdditionalDependencies>
+      <AdditionalDependencies>glew32sd.lib;%(AdditionalDependencies)</AdditionalDependencies>
     </Lib>
   </ItemDefinitionGroup>
   <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">
@@ -222,6 +223,7 @@
     </Link>
     <Lib>
       <AdditionalLibraryDirectories>$(BOOSTDIR)/$(Platform)</AdditionalLibraryDirectories>
+      <AdditionalDependencies>glew32s.lib</AdditionalDependencies>
     </Lib>
   </ItemDefinitionGroup>
   <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Release|x64'">

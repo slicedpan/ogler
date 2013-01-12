@@ -44,7 +44,7 @@ public:
 		if (!value && data[dataIndex])
 			data[dataIndex] ^= mask;
 	}
-	const bool operator[] (int index)
+	const bool operator[] (int index) const
 	{
 		int dataIndex = index / 32;
 		int mask = 1 << (index % 32);
@@ -110,7 +110,7 @@ public:
 	valueType operator[] (int index)
 	{
 		return list[index];
-	}
+	} 
 	int size()
 	{
 		return list.size();

@@ -14,7 +14,8 @@ GLFWEngine::GLFWEngine(void) : BasicEngine(new GLFWTimerProvider()),
 		printf("Could not open window!");
 
 	KeyInit();
-
+	MouseInit();
+	InitListen();
 }
 
 GLFWEngine::GLFWEngine(WindowSettings& w) : BasicEngine(new GLFWTimerProvider()),
@@ -25,6 +26,7 @@ GLFWEngine::GLFWEngine(WindowSettings& w) : BasicEngine(new GLFWTimerProvider())
 		printf("Could not open window");
 
 	KeyInit();
+	MouseInit();
 	InitListen();
 }
 
@@ -67,7 +69,7 @@ int GLFWEngine::InitWindow(WindowSettings& w)
 	glfwSetWindowTitle(w.Title.c_str());
 
 	*currentSettings = w;
-
+	glewExperimental = true;
 	GLenum glewErr = glewInit();
 	if (glewErr != GLEW_OK)
 	{
@@ -75,6 +77,8 @@ int GLFWEngine::InitWindow(WindowSettings& w)
 		return 1;
 	}
 
+	static int val = (int)__glewBindBuffer;
+	static int* loc = (int*)&__glewBindBuffer;
 	return err;
 }
 

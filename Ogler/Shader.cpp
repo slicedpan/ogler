@@ -28,7 +28,7 @@ Shader::Shader()
 {	
 	Init();
 	SetName("");
-	//Register();
+	Register();
 }
 
 Shader::Shader(const char* name)	
@@ -38,7 +38,7 @@ Shader::Shader(const char* name)
 {
 	Init();
 	SetName(name);
-	//Register();
+	Register();
 }
 
 Shader::Shader(const char* vertexFileName, const char* fragmentFileName, const char* shaderName)
@@ -50,7 +50,7 @@ Shader::Shader(const char* vertexFileName, const char* fragmentFileName, const c
 	SetName(shaderName);
 	SetSourceFiles(vertexFileName, fragmentFileName);
 	LoadFromFiles();
-	//Register();
+	Register();
 }
 
 void Shader::SetSource(const char* vertexSource, const char* fragmentSource)
@@ -228,7 +228,7 @@ bool Shader::Load()
 	if (!vertexFileName.empty() && !fragmentFileName.empty())
 	{
 		if (!LoadFromFiles())
-			return false;
+			return false;		
 	}
 	return Compile();
 }

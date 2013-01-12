@@ -40,11 +40,11 @@ void BasicEngine::Run()
 		t.fTimeSinceLastFrame = (float)timeElapsed;
 		Update(t);		
 		Display();
+		EndFrame();
 		if (LimitFPS)
 		{
 			timerProvider->Sleep(0.016 - timerProvider->GetTimeElapsed() + frameBegin);
 		}
-		EndFrame();
 		lastTime = frameBegin;
 		GUI.Update();
 	}

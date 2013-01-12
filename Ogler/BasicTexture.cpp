@@ -3,7 +3,7 @@
 #include <cstdlib>
 #include <GL\glew.h>
 
-BasicTexture::BasicTexture(char* filename) 
+BasicTexture::BasicTexture(const char* filename) 
 	: imgData(0),
 	glID(0),
 	Width(width),
@@ -41,9 +41,14 @@ void BasicTexture::LoadFromFile()
 	glTexImage2D(GL_TEXTURE_2D, 0, GL_RGBA, width, height, 0, GL_RGBA, GL_UNSIGNED_BYTE, imgData);
 	printf("loaded texture to GPU\n");
 	glEnable(GL_TEXTURE_2D);
-	int val = (int)(glGenerateMipmap);
-	glGenerateMipmap(GL_TEXTURE_2D);
-	printf("generated mipmaps\n");
+
+	glTexParameteri(GL_TEXTURE_2D, GL_TEXTURE_MAG_FILTER, GL_LINEAR);
+	glTexParameteri(GL_TEXTURE_2D, GL_TEXTURE_MIN_FILTER, GL_LINEAR);	
+
+	glTexParameteri(GL_TEXTURE_2D, GL_TEXTURE_WRAP_S, GL_CLAMP_TO_EDGE);
+	glTexParameteri(GL_TEXTURE_2D, GL_TEXTURE_WRAP_T, GL_CLAMP_TO_EDGE);
+
+	
 	stbi_image_free(imgData);
 	printf("freed image data\n");
 	fclose(file);
